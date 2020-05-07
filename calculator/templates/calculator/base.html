@@ -1,0 +1,63 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SnowCalc</title>
+    <link rel="stylesheet" href="{% static 'calculator/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/Footer-Basic.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'calculator/styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/5772d4f396.js">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container">
+          <i class="fa fa-snowflake-o logo-top"></i>
+          <a class="navbar-brand" href="{% url 'home' %}">SnowCalc</a>
+          <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+            <span class="sr-only">
+              Toggle navigation</span><span class="navbar-toggler-icon">
+            </span>
+          </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home' %}">Calculator</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                </ul>
+                <span class="navbar-text actions">
+                  <a class="login bh" href="{% url 'contact-us' %}">Contact Us</a>
+                  <a class="btn btn-light action-button ml-2 bh" role="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=colinbrosnan13%40gmail.com&item_name=Support+SnowCalc%27s+Development&currency_code=USD&source=url">Donate</a>
+                </span>
+              </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock content %}
+    <div class="footer-basic">
+    <footer>
+        <div class="social"><a role="link"href="https://instagram.com/snowcalc.io"><i class="icon ion-social-instagram"></i></a><a role="link" href="https://twitter.com/snowcalc.io"><i class="icon ion-social-twitter"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="{% url 'home' %}">Calculator</a></li>
+            <li class="list-inline-item"><a href="{% url 'about' %}">About</a></li>
+            <li class="list-inline-item"><a href="{% url 'contact-us' %}">Contact Us</a></li>
+            <li class="list-inline-item"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=colinbrosnan13%40gmail.com&item_name=Support+SnowCalc%27s+Development&currency_code=USD&source=url">Donate</a></li>
+            <li class="list-inline-item"><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">SnowCalc © 2020</p>
+    </footer>
+  </div>
+  <script src="{% static 'calculator/jquery.min.js' %}"></script>
+  <script src="{% static 'calculator/bootstrap.min.js' %}"></script>
+  <script src="{% static 'calculator/smart-forms.min.js' %}"></script>
+</body>
+
+</html>

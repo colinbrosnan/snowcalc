@@ -1,0 +1,18 @@
+{% extends "calculator/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="login-clean">
+      <form method="post">
+          {% csrf_token %}
+          <h2 class="sr-only">Calculator Form</h2>
+          <div class="illustration">
+            <i class="icon ion-ios-snowy"></i>
+          </div>
+          {{ form|crispy }}
+          <div class="form-group"><button class="btn calculate-button btn-block" type="submit">Calculate</button></div>
+          <div class="google-div">
+            <img class="img-thumbnail border-white" src="media/powered_by_google_on_white.png" style="width:200px; height:auto;">
+          </div>
+      </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "calculator/base.html" %}
+{% block content %}
+  <div class="loader">
+    <i name="loading-icon" class="icon ion-ios-snowy fa-spin"></i>
+  </div>
+  <div class="jumbotron" style="text-align:center;">
+      <h1>{{context}}%</h1>
+      <p class="explanation">You have a {{context}}% chance of a snowday, according to our algorithm.</p>
+      <p id="thanks" class="explanation">This is just an estimation, the decision ultimately comes from your school's administration. Best of luck on getting a snow day!</p>
+      <p>
+        <a class="btn calculate-button" role="button" href="{% url 'home' %}">Try another calculation</a>
+      </p>
+  </div>
+  <script type="text/javascript">
+    function loadMe(loader){
+        loader.className += " hidden";
+    }
+
+    window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        setTimeout(loadMe, 1000, loader);
+        //loader.className += " hidden"; // class "loader hidden"
+    });
+  </script>
+{% endblock content %}
